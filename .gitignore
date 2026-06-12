@@ -1,0 +1,27 @@
+# Flutter/Dart - applies to all projects
+**/build/
+**/.dart_tool/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/.packages
+**/.idea/
+**/.vscode/
+**/pubspec.lock
+**/*.g.dart
+**/*.freezed.dart
+
+# Android
+**/android/.gradle/
+**/android/local.properties
+**/android/key.properties
+
+# iOS
+**/ios/Pods/
+**/ios/.symlinks/
+
+# macOS
+**/macos/Pods/
+
+# Misc
+**/.DS_Store
+**/Thumbs.db
