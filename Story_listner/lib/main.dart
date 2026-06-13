@@ -99,5 +99,3 @@ class _StoryPageState extends State<StoryPage> {
     );
   }
 }
-
-// Checking update from android terminal
