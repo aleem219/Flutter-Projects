@@ -4,9 +4,14 @@ import 'icon_Content.dart';
 import 'reuseable_cart.dart';
 
 const activeCardColour = Color(0xFF1D1E33);
+const inactiveCardColour = Color(0xFF111328);
 const bottomContainerHeight = 80.0;
 const bottomContainerColour = Color(0xFFEB1555);
 const iconHeight = 80.0;
+
+enum Gender {
+  male,female
+}
 
 
 class InputPage extends StatefulWidget {
@@ -15,6 +20,8 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
+  Gender? selectedGender;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,20 +33,34 @@ class _InputPageState extends State<InputPage> {
             Expanded(child: Row(
               children: [
                 Expanded(
-                  child: ReusableCard(
-                    colour: activeCardColour,
-                    cardChild: IconWidget(
-                      text: 'MALE',
-                      icon: FaIcon(FontAwesomeIcons.mars, size: iconHeight),
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selectedGender = Gender.male;
+                      });
+                    },
+                    child: ReusableCard(
+                      colour: selectedGender == Gender.male ? activeCardColour : inactiveCardColour,
+                      cardChild: IconWidget(
+                        text: 'MALE',
+                        icon: FaIcon(FontAwesomeIcons.mars, size: iconHeight),
+                      ),
                     ),
                   ),
                 ),
                 Expanded(
-                  child: ReusableCard(
-                    colour: activeCardColour,
-                    cardChild: IconWidget(
-                      text: 'FEMALE',
-                      icon: FaIcon(FontAwesomeIcons.venus, size: iconHeight),
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selectedGender = Gender.female;
+                      });
+                    },
+                    child: ReusableCard(
+                      colour: selectedGender == Gender.female ? activeCardColour : inactiveCardColour,
+                      cardChild: IconWidget(
+                        text: 'FEMALE',
+                        icon: FaIcon(FontAwesomeIcons.venus, size: iconHeight),
+                      ),
                     ),
                   ),
                 ),
