@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
-const bottomContainerColour = Color(0xFFEB1555);
-const labelTextStyle = TextStyle(
-  fontSize: 18.0,
-  color: Color(0xFF8D8E98),
-);
-const sizeBoxHeight = 15.0;
+import 'constants.dart';
 
 class IconWidget extends StatelessWidget {
   IconWidget({required this.text, this.icon});
@@ -17,10 +12,10 @@ class IconWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         if (icon != null) icon!,
-        SizedBox(height: sizeBoxHeight),
+        SizedBox(height: kSizeBoxHeight),
         Text(
           text,
-          style: labelTextStyle,
+          style: kLabelTextStyle,
         )
       ],
     );
