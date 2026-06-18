@@ -120,7 +120,7 @@ class _InputPageState extends State<InputPage> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          RoundIconButton(icon: FontAwesomeIcons.add),
+                          RoundIconButton(icon: FontAwesomeIcons.plus),
                           SizedBox(width: 20.0),
                           RoundIconButton(icon: FontAwesomeIcons.minus),
                         ],
@@ -139,7 +139,7 @@ class _InputPageState extends State<InputPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            RoundIconButton(icon: FontAwesomeIcons.add),
+                            RoundIconButton(icon: FontAwesomeIcons.plus),
                             SizedBox(width: 20.0),
                             RoundIconButton(icon: FontAwesomeIcons.minus),
                           ],
