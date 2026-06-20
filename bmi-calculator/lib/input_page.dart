@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'icon_Content.dart';
 import 'reuseable_cart.dart';
 import 'constants.dart';
+import 'results_page.dart';
 
 enum Gender {
   male,female
@@ -18,6 +19,7 @@ class _InputPageState extends State<InputPage> {
   Gender? selectedGender;
   int height = 180;
   int weight = 60;
+  int age = 20;
 
   @override
   Widget build(BuildContext context) {
@@ -120,9 +122,23 @@ class _InputPageState extends State<InputPage> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          RoundIconButton(icon: FontAwesomeIcons.plus),
+                          RoundIconButton(
+                              icon: FontAwesomeIcons.minus,
+                            onPressed: () {
+                                setState(() {
+                                  weight--;
+                                });
+                            },
+                          ),
                           SizedBox(width: 20.0),
-                          RoundIconButton(icon: FontAwesomeIcons.minus),
+                          RoundIconButton(
+                              icon: FontAwesomeIcons.plus,
+                            onPressed: () {
+                                setState(() {
+                                  weight ++;
+                                });
+                            },
+                          ),
                         ],
                       )
                     ],
@@ -135,13 +151,27 @@ class _InputPageState extends State<InputPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text('AGE',style: kLabelTextStyle,),
-                        Text(weight.toString(),style: kNumberTextStyle, ),
+                        Text(age.toString(),style: kNumberTextStyle,),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            RoundIconButton(icon: FontAwesomeIcons.plus),
+                            RoundIconButton(
+                                icon: FontAwesomeIcons.minus,
+                              onPressed: () {
+                                  setState(() {
+                                    age--;
+                                  });
+                              },
+                            ),
                             SizedBox(width: 20.0),
-                            RoundIconButton(icon: FontAwesomeIcons.minus),
+                            RoundIconButton(
+                                icon: FontAwesomeIcons.plus,
+                              onPressed: () {
+                                  setState(() {
+                                    age++;
+                                  });
+                              },
+                            ),
                           ],
                         )
                       ],
@@ -151,11 +181,20 @@ class _InputPageState extends State<InputPage> {
                 ),
               ],
             )),
-            Container(
-              color: kBottomContainerColour,
-              margin: EdgeInsets.only(top: 10.0),
-              width: double.infinity,
-              height: kBottomContainerHeight,
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ResultsPage()),
+                );
+              },
+              child: Container(
+                alignment: Alignment.center,
+                child: Text('CALCULATE',style: kLabelTextStyle,),
+                color: kBottomContainerColour,
+                margin: EdgeInsets.only(top: 10.0),
+                width: double.infinity,
+                height: kBottomContainerHeight,
+              ),
             ),
           ],
         )
@@ -163,24 +202,23 @@ class _InputPageState extends State<InputPage> {
   }
 }
 
-
 class RoundIconButton extends StatelessWidget {
-  RoundIconButton({this.icon});
+  RoundIconButton({this.icon, this.onPressed});
   final dynamic icon;
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
-    return RawMaterialButton(onPressed: () { },
+    return RawMaterialButton(
+      onPressed: onPressed,
       child: FaIcon(icon),
       elevation: 6.0,
       constraints: BoxConstraints.tightFor(
         width: 56.0,
-        height: 56.0
+        height: 56.0,
       ),
-        shape: CircleBorder(),
-        fillColor: Color(0xFF4C4F5E),
+      shape: CircleBorder(),
+      fillColor: Color(0xFF4C4F5E),
     );
   }
 }
-
-
