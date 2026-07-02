@@ -1,0 +1,16 @@
+    flutter_native_splash:
+        android: true
+        ios: true
+        web: false
+
+#        background_image:
+        image: "images/splash.png"
+#        branding:
+        color: "#0F804D"
+
+
+        android_12:
+          image: "images/splash.png"
+          color: "#0F804D"
+#          background_image:
+#          branding:
