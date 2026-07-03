@@ -4,13 +4,13 @@
         web: false
 
 #        background_image:
-        image: "images/splash.png"
+        image: "images/splashlogo.png"
 #        branding:
         color: "#0F804D"
 
 
         android_12:
-          image: "images/splash.png"
+          image: "images/splashlogo.png"
           color: "#0F804D"
 #          background_image:
 #          branding:
