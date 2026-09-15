@@ -49,6 +49,3 @@ class _PriceScreenState extends State<PriceScreen> {
     );
   }
 }
-
-
-// checking code
