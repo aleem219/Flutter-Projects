@@ -40,14 +40,14 @@ class _ChatScreenState extends State<ChatScreen> {
                       decoration: kMessageTextFieldDecoration,
                     ),
                   ),
-                  FlatButton(
-                    onPressed: () {
-                      //Implement send functionality.
-                    },
-                    child: Text(
-                      'Send',
-                      style: kSendButtonTextStyle,
+                  TextButton(
+                    style: TextButton.styleFrom(
+                      foregroundColor: Colors.white, // was textColor
                     ),
+                    onPressed: () {
+                      // your logic
+                    },
+                    child: Text('Send'),
                   ),
                 ],
               ),
